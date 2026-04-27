@@ -10,12 +10,12 @@ const AllCategory = async ({id}) => {
 
     return (
         <div>
-            <h2 className="text-xl font-semibold pb-4"> All Category</h2>
+            <h2 className="text-xl font-bold pb-4"> All Category</h2>
             <ul className="space-y-1 text-center text-gray-500">
                 {newsCategory.map(
                     news =>
                         <li
-                            className={`${activeId === news.category_id && 'bg-slate-500 text-base-100'} font-bold`}
+                            className={`${activeId === news.category_id && 'bg-slate-400 text-white'} font-bold`}
                             key={news.category_id}
                         >
                             <Link

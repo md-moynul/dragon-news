@@ -3,11 +3,12 @@ import Link from 'next/link';
 import React from 'react';
 import { CiBookmark, CiShare2 } from 'react-icons/ci';
 import { FaEye } from 'react-icons/fa';
+import { GoArrowLeft } from 'react-icons/go';
 import { IoStar } from 'react-icons/io5';
-const NewsCard = ({ news }) => {
-    const { _id, author, details, image_url, rating, title, total_view } = news;
+const NewsDetailsCard = ({ news }) => {
+    const { _id, author, details, image_url,  title,category_id  } = news;
     // console.log(_id);
-    
+
     return (
         <div>
             <div className="card bg-base-100  shadow-sm">
@@ -25,33 +26,18 @@ const NewsCard = ({ news }) => {
                         <CiShare2 size={25} color='gray' />
                     </div>
                 </div>
-                <div className="card-body space-y-5">
+                <div className="card-body space-y-4">
                     <h2 className="text-2xl font-bold">{title}</h2>
                     <figure>
                         <Image src={image_url} alt={title} width={520} height={265} className='w-full' />
                     </figure>
-                    <div className=' text-gray-500 space-y-4'>
-                        <p className='line-clamp-4'>{details}</p>
-                        <Link href={`/news/${_id}`}>
-                            <button className='btn bg-yellow-500 text-white'>Read More</button>
-                        </Link>
-
+                    <div className='mb-4 text-gray-500'>
+                        <p className=''>{details}</p>
                     </div>
-                    <hr className='text-gray-300 ' />
-                    <div className='flex justify-between'>
-                        <div className='flex gap-2 items-center '>
-                            <IoStar size={16} className='text-yellow-500' />
-                            <IoStar size={16} className='text-yellow-500' />
-                            <IoStar size={16} className='text-yellow-500' />
-                            <IoStar size={16} className='text-yellow-500' />
-                            <IoStar size={16} className='text-yellow-500' />
-                            <p className=' text-gray-500 font-bold'>{rating.number}</p>
-                        </div>
-                        <div className='flex gap-2 items-center text-gray-700'>
-                            <FaEye size={20} />
-                            <p>{total_view}</p>
-                        </div>
-                    </div>
+                    <Link href={`/category/${category_id}`}>
+                        <button className='btn bg-red-500 text-white'><GoArrowLeft size={25}/>All news in this category</button>
+                    </Link>
+                    
                 </div>
 
             </div>
@@ -59,4 +45,4 @@ const NewsCard = ({ news }) => {
     );
 };
 
-export default NewsCard;
+export default NewsDetailsCard;

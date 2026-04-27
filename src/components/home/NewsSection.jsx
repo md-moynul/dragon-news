@@ -3,10 +3,10 @@ import React from 'react';
 import NewsCard from './NewsCard';
 
 const NewsSection = async ({ id }) => {
-    console.log(id);
+    // console.log(id);
 
     const newsByCategory = await getNewsByCategory(id)
-    console.log(newsByCategory);
+    // console.log(newsByCategory);
 
 
     return (
