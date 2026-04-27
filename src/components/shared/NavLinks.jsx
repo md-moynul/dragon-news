@@ -5,11 +5,11 @@ import React from 'react';
 
 const NavLinks = ({href , children ,className}) => {
     const pathName = usePathname();
-    console.log(pathName);
+   
     
     const isActive = pathName === href;
     return (
-        <Link href={href} className={`${isActive && 'border-b-2 border-b-purple-500'}`}>{children}</Link>
+        <Link href={href} className={`${isActive && 'border-b-2 border-b-purple-500'} ${className}`}>{children}</Link>
     );
 };
 
