@@ -6,20 +6,18 @@ export async function generateMetadata({ params }) {
   const { id } = await params;
   const news = await getCategory();
   const category = news.news_category
-  // console.log(category);
   
   const targetedCategory = category.filter(c => c.category_id == id)
-  console.log(targetedCategory[0].category_name);
+
   
 
   return {
-    title: `Dragon News | ${targetedCategory[0].category_name}`
+    title: `${targetedCategory[0].category_name} | Dragon News`
   
   }
 }
 export default async function CategoryPage({ params }) {
   const { id } = await params;
-  // console.log(id);
 
   return (
     <div className="container mx-auto grid grid-cols-14 gap-4 py-10 md:py-15">
