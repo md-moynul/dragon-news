@@ -11,7 +11,7 @@ const NewsSection = async ({ id }) => {
 
     return (
         <div className='space-y-4'>
-            <h2 className="font-bold text-2xl">Dragon News Home</h2>
+            <h2 className="font-bold text-2xl">Dragon News</h2>
             <div className='space-y-8'>
                 {newsByCategory.length > 0 ?
 

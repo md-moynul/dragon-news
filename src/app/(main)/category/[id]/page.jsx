@@ -13,8 +13,7 @@ export async function generateMetadata({ params }) {
   
 
   return {
-    title: targetedCategory[0].category_name
-
+    title: `Dragon News | ${targetedCategory[0].category_name}`
   
   }
 }
