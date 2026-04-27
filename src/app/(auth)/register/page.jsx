@@ -11,7 +11,7 @@ const RegisterPage = () => {
                 <hr className="text-gray-200" />
                 <fieldset className="space-y-4">
                     <label className="label font-bold ">Your Name</label>
-                    <input type="text" className="input w-full  border-none bg-base-300" placeholder="Enter your name" />
+                    <input type="text" name="name" className="input w-full  border-none bg-base-300" placeholder="Enter your name" />
                 </fieldset>
                 <fieldset className="space-y-4">
                     <label className="label font-bold ">Photo URL</label>
