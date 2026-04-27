@@ -1,4 +1,5 @@
 'use client'
+import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import { forbidden } from "next/navigation";
 import { useState } from "react";
@@ -11,6 +12,19 @@ const LoginPage = () => {
         const formData = new FormData(e.currentTarget);
         const userData = Object.fromEntries(formData.entries());
         console.log(userData);
+        const { data, error } = await authClient.signIn.email({
+            email: userData.email, // required
+            password: userData.password, // required
+            rememberMe: true,
+            callbackURL: "/",
+        });
+        if(error){
+            alert(error.message)
+        }
+        if(data){
+            alert('Login successful ')
+        }
+        
     }
     return (
         <div className="min-h-[89vh] flex items-center bg-base-300">
