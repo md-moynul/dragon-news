@@ -2,11 +2,11 @@
 import { getCategory } from "@/lib/data";
 import Link from "next/link";
 
-const AllCategory = async () => {
+const AllCategory = async ({id}) => {
     const data = await getCategory()
     const newsCategory = data.news_category
     // console.log(newsCategory);
-    const activeId =  null;
+    const activeId =  id;
 
     return (
         <div>
@@ -15,7 +15,7 @@ const AllCategory = async () => {
                 {newsCategory.map(
                     news =>
                         <li
-                            className={`${activeId === news.category_id && 'bg-slate-300'}`}
+                            className={`${activeId === news.category_id && 'bg-slate-500 text-base-100'} font-bold`}
                             key={news.category_id}
                         >
                             <Link

@@ -1,16 +1,16 @@
-import NewsCard from '@/components/home/NewsCard';
-import { getNewsById } from '@/lib/data';
-import React from 'react';
+import AllCategory from "@/components/home/LeftSidebar";
+import NewsSection from "@/components/home/NewsSection";
+import RightSidebar from "@/components/home/RightSidebar";
 
-const CategoryPage = async() => {
-    const news =await getNewsById('f69a695f037cd9484cecaea37ca71012')
-    console.log(news);
+export default async function CategoryPage({params}) {
+    const {id} = await params;
+    console.log(id);
     
-    return (
-        <div>
-            <NewsCard news={news} />
-        </div>
-    );
-};
-
-export default CategoryPage;
+  return (
+    <div className="container mx-auto grid grid-cols-14 gap-4 py-10 md:py-15">
+      <div className="col-span-3 "><AllCategory id={id}/></div>
+      <div className="col-span-8 "><NewsSection id={id}/></div>
+      <div className="col-span-3 "><RightSidebar/></div>
+    </div>
+  );
+}

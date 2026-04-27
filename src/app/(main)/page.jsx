@@ -1,13 +1,7 @@
-import AllCategory from "@/components/home/LeftSidebar";
-import NewsSection from "@/components/home/NewsSection";
-import RightSidebar from "@/components/home/RightSidebar";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <div className="container mx-auto grid grid-cols-14 gap-4 py-10 md:py-15">
-      <div className="col-span-3 "><AllCategory/></div>
-      <div className="col-span-8 "><NewsSection/></div>
-      <div className="col-span-3 "><RightSidebar/></div>
-    </div>
-  );
+const defaultCategoryId = '01';
+export default async  function Home() {
+  
+    redirect(`/category/${defaultCategoryId}`)
 }

@@ -36,7 +36,9 @@ import { IoStar } from 'react-icons/io5';
 // : 
 // "f69a695f037cd9484cecaea37ca71012"
 const NewsCard = ({ news }) => {
-    const { id, author, details, image_url, rating, title, total_view } = news;
+    const { _id, author, details, image_url, rating, title, total_view } = news;
+    console.log(_id);
+    
     return (
         <div>
             <div className="card bg-base-100  shadow-sm">
@@ -61,7 +63,7 @@ const NewsCard = ({ news }) => {
                     </figure>
                     <div className='mb-4'>
                         <p className='line-clamp-4'>{details}</p>
-                        <Link href={`/category/${id}`}>
+                        <Link href={`/category/${_id}`}>
                             <button className='btn bg-yellow-500 text-white'>Read More</button>
                         </Link>
 
